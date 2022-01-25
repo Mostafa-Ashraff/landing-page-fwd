@@ -36,26 +36,11 @@ let links = document.getElementsByClassName('menu__link');
  * Start Helper Functions
  * 
 */
-let isInViewport = function (sect) {
-    let top = sect.offsetTop;
-    let left = sect.offsetLeft;
-    let width = sect.offsetWidth;
-    let height = sect.offsetHeight;
 
-    while(sect.offsetParent) {
-    sect = sect.offsetParent;
-    top += sect.offsetTop;
-    left += sect.offsetLeft;
-    }
-
-    return (
-    top >= window.pageYOffset &&
-    left >= window.pageXOffset &&
-    (top + height) <= (window.pageYOffset + window.innerHeight) &&
-    (left + width) <= (window.pageXOffset + window.innerWidth)
-    );
-}
-
+function isInViewport (elem) {
+    let sectionPosition = elem.getBoundingClientRect();
+    return (sectionPosition.top >= -400 && sectionPosition.top <= 150);
+} 
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -122,4 +107,4 @@ document.body.addEventListener('DOMContentLoaded', buildNav());
 // Scroll to section on link click
 // Set sections as active
 
-window.addEventListener('scroll', isActive)
+document.addEventListener('scroll', isActive)

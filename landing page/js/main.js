@@ -28,7 +28,7 @@ let fragment = document.createDocumentFragment();
 let nav = document.getElementById('nav');
 let ul = document.getElementById('navbar__list');
 let sections = document.querySelectorAll('section');
-let links = document.getElementsByClassName('menu__link');
+
 
 
 /**
@@ -70,7 +70,7 @@ let buildNav = () => {
     nav.appendChild(fragment);
 }
 
-
+document.body.addEventListener('DOMContentLoaded', buildNav());
 
 // Add class 'active' to section when near top of viewport
 function isActive() {
@@ -86,24 +86,28 @@ function isActive() {
         section.classList.remove('active');
     }
 }
-}
-console.log(links);
+};
+//console.log(links);
 // Scroll to anchor ID using scrollTO event
-for(link of links){
-    link.addEventListener('click', ()=>{
-        let element = document.getElementById(link.getAttribute('data__link'));
-        element.scrollIntoView({behavior:'smooth', block:'start'})
-    })
-}
-
-/**
- * End Main Functions
- * Begin Events
- * 
+let links = document.getElementsByClassName('menu__link');
+let linksNumber = links.length;
+/*console.log(links);
+console.log(links[2]);
 */
+[...links].forEach((link) =>{
+    link.addEventListener('click', (el) => {
+        el.preventDefault();
+        let clickedSection = document.getElementById(link.getAttribute('data__link'));
+        clickedSection.scrollIntoView({behavior:'smooth'})
+    })
+    
+});
+
+
+
 
 // Build menu 
-document.body.addEventListener('DOMContentLoaded', buildNav());
+
 // Scroll to section on link click
 // Set sections as active
 

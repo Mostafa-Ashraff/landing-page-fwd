@@ -87,7 +87,7 @@ function isActive() {
     }
 }
 };
-//console.log(links);
+
 // Scroll to anchor ID using scrollTO event
 let links = document.getElementsByClassName('menu__link');
 let linksNumber = links.length;

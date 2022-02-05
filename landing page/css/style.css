@@ -220,3 +220,43 @@ section.active .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+@media (max-width:769px){
+    h1{
+        padding-top: 2em;
+        font-size: 4em;
+    }
+    p{
+        font-size: 1.2em;
+    }
+    
+    li{
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width:575px){
+    h1{
+        padding-top: 2em;
+    }
+    p{
+        font-size: 0.75em;
+    }
+    li{
+        font-size: 0.9em;
+    }
+}
+
+
+
+@media (max-width:375px){
+    h2{
+        font-size: 2em;
+    }
+
+    p{
+        font-size: 0.75em;
+    }
+
+}
+

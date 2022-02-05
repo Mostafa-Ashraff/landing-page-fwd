@@ -69,7 +69,7 @@ let buildNav = () => {
     fragment.appendChild(ul);
     nav.appendChild(fragment);
 }
-
+// Build menu
 document.body.addEventListener('DOMContentLoaded', buildNav());
 
 // Add class 'active' to section when near top of viewport
@@ -94,7 +94,9 @@ let linksNumber = links.length;
 /*console.log(links);
 console.log(links[2]);
 */
+
 [...links].forEach((link) =>{
+    // Scroll to section on link click
     link.addEventListener('click', (el) => {
         el.preventDefault();
         let clickedSection = document.getElementById(link.getAttribute('data__link'));
@@ -106,9 +108,9 @@ console.log(links[2]);
 
 
 
-// Build menu 
 
-// Scroll to section on link click
+
+
 // Set sections as active
 
 document.addEventListener('scroll', isActive)
